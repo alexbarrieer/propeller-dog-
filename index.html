@@ -143,7 +143,7 @@
         }
         /* Animated Button Styles */
         
-        button {
+        .button {
             background: linear-gradient(45deg, #3498db, #2980b9);
             color: white;
             border: none;
@@ -161,7 +161,7 @@
             box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
         }
         
-        button::before {
+        .button::before {
             content: "";
             position: absolute;
             top: 0;
@@ -172,16 +172,16 @@
             transition: 0.5s;
         }
         
-        button:hover {
+        .button:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 25px rgba(52, 152, 219, 0.6);
         }
         
-        button:hover::before {
+        .button:hover::before {
             left: 100%;
         }
         
-        button:active {
+        .button:active {
             transform: translateY(2px);
             box-shadow: 0 2px 10px rgba(52, 152, 219, 0.4);
         }
@@ -198,7 +198,7 @@
             }
         }
         
-        button {
+        .button {
             animation: pulse 2s infinite;
         }
         
@@ -279,7 +279,7 @@
                 <p id="holders">Loading...</p>
             </div>
         </div>
-        <a href="https://pump.fun/coin/24vFHnSzTLZXvJEaKSeCdurUK7Ks3NtpD4cvVRThpump" id="woofBtn">Make Him Woof!🐶</a>
+        <a href="https://pump.fun/coin/24vFHnSzTLZXvJEaKSeCdurUK7Ks3NtpD4cvVRThpump" id="woofBtn" class="button">Make Him Woof!🐶</a>
     </div>
     <script src="script.js"></script>
 </body>
