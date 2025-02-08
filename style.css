@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f0f8ff url('dog-whimsical.gif') repeat;
+    font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    /* Semi-transparent white background */
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+.dog {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto 2rem;
+}
+
+.dog-face {
+    background: #f4d03f;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+    margin: 20px auto;
+}
+
+.propeller {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.blade {
+    width: 60px;
+    height: 15px;
+    background: #3498db;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.blade:nth-child(1) {
+    transform: rotate(45deg);
+}
+
+.blade:nth-child(2) {
+    transform: rotate(-45deg);
+}
+
+.eyes {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 40px;
+}
+
+.eye {
+    width: 20px;
+    height: 20px;
+    background: #2c3e50;
+    border-radius: 50%;
+}
+
+.nose {
+    width: 25px;
+    height: 25px;
+    background: #2c3e50;
+    border-radius: 50%;
+    margin: 10px auto;
+}
+
+.mouth {
+    width: 60px;
+    height: 20px;
+    border-radius: 0 0 30px 30px;
+    background: #2c3e50;
+    margin: 10px auto;
+}
+
+.ears {
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+
+.ear {
+    width: 40px;
+    height: 60px;
+    background: #f4d03f;
+    position: absolute;
+    border-radius: 20px;
+}
+
+.ear:nth-child(1) {
+    left: 10px;
+    transform: rotate(-30deg);
+}
+
+.ear:nth-child(2) {
+    right: 10px;
+    transform: rotate(30deg);
+}
+
+@keyframes spin {
+    100% {
+        transform: translateX(-50%) rotate(360deg);
+    }
+}
+
+.propeller.spinning {
+    animation: spin 0.5s linear infinite;
+}
+
+h1 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.tagline {
+    color: #7f8c8d;
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.stat-box {
+    background: white;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+button:active {
+    transform: scale(0.95);
+}

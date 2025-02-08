@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOOPER 🐕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&family=Orbitron:wght@700&family=Comfortaa:wght@400;700&display=swap" rel="stylesheet" />
+    <style>
+        /* Copy all CSS content here */
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: #f0f8ff url("dog-whimsical.gif") repeat;
+            font-family: "Comfortaa", cursive;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            text-align: center;
+            padding: 3rem;
+            background: rgba(255, 255, 255, 0.95);
+            /* Semi-transparent white background */
+            border-radius: 20px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.15), 0 0 60px rgba(52, 152, 219, 0.2), inset 0 0 15px rgba(52, 152, 219, 0.1);
+            margin: 20px;
+            min-width: 320px;
+            max-width: 600px;
+            border: 2px solid rgba(52, 152, 219, 0.3);
+            backdrop-filter: blur(5px);
+        }
+        /* Spacing between elements */
+        
+        .dog {
+            margin-bottom: 3rem;
+        }
+        
+        h1 {
+            font-family: "Righteous", cursive;
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            text-shadow: 2px 2px 0 rgba(52, 152, 219, 0.3);
+            letter-spacing: 1px;
+        }
+        
+        .tagline {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 700;
+        }
+        
+        .description {
+            margin-bottom: 3rem;
+            padding: 0 1rem;
+        }
+        
+        .description>p {
+            color: #34495e;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            text-align: left;
+        }
+        
+        .feature {
+            background: rgba(52, 152, 219, 0.1);
+            padding: 1.2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(52, 152, 219, 0.2);
+        }
+        
+        .feature h4 {
+            color: #2980b9;
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .feature p {
+            color: #34495e;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+            padding: 1rem 0;
+        }
+        
+        .stat-box {
+            padding: 1.5rem 2.5rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-box h3 {
+            font-family: "Orbitron", sans-serif;
+            color: #3498db;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+            letter-spacing: 1px;
+        }
+        
+        .stat-box p {
+            font-family: "Orbitron", sans-serif;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        /* Animated Button Styles */
+        
+        button {
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            font-family: "Comfortaa", cursive;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+        }
+        
+        button::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient( 90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.6);
+        }
+        
+        button:hover::before {
+            left: 100%;
+        }
+        
+        button:active {
+            transform: translateY(2px);
+            box-shadow: 0 2px 10px rgba(52, 152, 219, 0.4);
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+            }
+            50% {
+                box-shadow: 0 5px 30px rgba(52, 152, 219, 0.6);
+            }
+            100% {
+                box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+            }
+        }
+        
+        button {
+            animation: pulse 2s infinite;
+        }
+        
+        .icon-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .dog {
+            /* ... rest of your CSS ... */
+        }
+        /* ... rest of your CSS ... */
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="icon-wrapper">
+            <a href="https://x.com/doopersol" target="_blank" class="twitter-icon" aria-label="Follow us on Twitter">
+
+                <svg viewBox="0 0 24 24" width="30" height="30">
+                    <path fill="#000000" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+            </a>
+            <a href="https://x.com/doopersol" target="_blank" class="pump-icon" aria-label="">
+
+                <img src="Group 1853.png" alt="" style="width: 30px; height: 30px;">
+            </a>
+        </div>
+        <div class="dog">
+            <div class="propeller">
+                <div class="blade"></div>
+                <div class="blade"></div>
+            </div>
+            <div class="dog-face">
+                <div class="eyes">
+                    <div class="eye"></div>
+                    <div class="eye"></div>
+                </div>
+                <div class="nose"></div>
+                <div class="mouth"></div>
+            </div>
+            <div class="ears">
+                <div class="ear"></div>
+                <div class="ear"></div>
+            </div>
+        </div>
+        <h1>DOOPER</h1>
+
+
+        <p class="tagline">The goodest boy in crypto! 🚀</p>
+        <div class="description">
+            <p>DOOPER is the first propeller-powered meme token that's taking crypto to new heights! 🚁</p>
+            <div class="features">
+                <div class="feature">
+                    <h4>🎯 Fair Launch</h4>
+                    <p>No presale, no team tokens. Pure community power!</p>
+                </div>
+                <div class="feature">
+                    <h4>🔒 LP Locked</h4>
+                    <p>Liquidity locked for 1 year. Woof safely!</p>
+                </div>
+                <div class="feature">
+                    <h4>🎮 P2E Game Coming</h4>
+                    <p>Help DOOPER collect bones in the upcoming game!</p>
+                </div>
+            </div>
+        </div>
+        <div class="stats">
+            <div class="stat-box">
+                <h3>Total Supply</h3>
+                <p>1,000,000 $DOOPER</p>
+            </div>
+            <div class="stat-box">
+                <h3>Holders</h3>
+                <p id="holders">Loading...</p>
+            </div>
+        </div>
+        <button id="woofBtn">Make Him Woof!🐶</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
