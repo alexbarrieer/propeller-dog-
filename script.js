@@ -4,12 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const holdersElement = document.getElementById("holders");
   const dog = document.querySelector(".dog");
 
-  // Random number of holders that increases over time
-  let holders = Math.floor(Math.random() * 1000) + 500;
+  // Random number of holders between 30 and 100
+  let holders = Math.floor(Math.random() * (100 - 30 + 1)) + 30;
 
-  // Update holders count
+  // Update holders count with smaller increments
   setInterval(() => {
-    holders += Math.floor(Math.random() * 10);
+    holders += Math.floor(Math.random() * 3) + 1; // Increment by 1-3
     holdersElement.textContent = holders.toLocaleString();
   }, 5000);
 
